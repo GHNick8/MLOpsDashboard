@@ -1,0 +1,11 @@
+fastapi
+uvicorn
+pydantic
+scikit-learn
+pandas
+numpy
+mlflow
+prefect
+evidently==0.4.0
+kagglehub
+streamlit

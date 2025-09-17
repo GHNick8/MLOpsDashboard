@@ -1,0 +1,4 @@
+{
+  "mode": "mlflow",
+  "mlflow_model_uri": "models:/ufo_sightings_classifier/Latest"
+}
