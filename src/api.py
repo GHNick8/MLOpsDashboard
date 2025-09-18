@@ -5,6 +5,28 @@ from fastapi.middleware.cors import CORSMiddleware
 import logging
 import mlflow.sklearn
 import os, json
+import streamlit as st
+
+st.markdown(
+    """
+    <style>
+    .stButton button {
+        background-color: #00CC88;
+        color: white;
+        font-weight: bold;
+        border-radius: 6px;
+        padding: 8px 16px;
+        transition: 0.3s;
+    }
+    .stButton button:hover {
+        background-color: #009966;
+        transform: scale(1.05);
+    }
+    </style>
+    """,
+    unsafe_allow_html=True
+)
+
 
 # ---------------------------------------
 # Logging Setup

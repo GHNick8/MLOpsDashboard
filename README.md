@@ -1,83 +1,116 @@
-🛸 UFO Sightings Classifier – MLOps Project
+🛸 UFO Sightings Classifier (MLOps Project)
 
-An end-to-end MLOps pipeline that classifies UFO sighting reports as Explained or Unexplained.
-Built with FastAPI, MLflow, Evidently, Prefect, and Streamlit.
+An end-to-end MLOps project that classifies UFO sighting reports as Explained (planes, stars, satellites…) or Unexplained UFOs 👽, with model monitoring and a Streamlit dashboard.
+
+This project shows how to take a model from raw data to deployment and monitoring, making it portfolio-ready for both recruiters and ML practitioners.
 
 🚀 Features
 
-Data ingestion from Kaggle UFO dataset.
+Data ingestion & preprocessing
 
-Preprocessing pipeline for cleaning text reports.
+UFO dataset from NUFORC on Kaggle
 
-Model training with scikit-learn + MLflow experiment tracking.
+Text cleaning and vectorization (TF-IDF)
 
-Model registry (versioned models).
+Model training
 
-Serving via FastAPI REST API.
+Logistic Regression with probability calibration
 
-Monitoring with Evidently (data drift + prediction drift).
+MLflow integration for experiment tracking
 
-Streamlit dashboard for interactive demo.
+Logged accuracy & classification reports
+
+Serving
+
+FastAPI app for predictions
+
+Streamlit dashboard for interactive exploration
+
+Monitoring
+
+Data & prediction drift detection with Evidently
+
+Drift reports saved in JSON + HTML
+
+Monitoring tab in dashboard
+
+Dashboard (Streamlit)
+
+🔍 Single prediction with friendly labels + confidence %
+
+📂 Batch classification with CSV upload + visualization
+
+📊 Monitoring tab with drift summary & full report
+
+⚙️ Tech Stack
+
+Python
+
+Scikit-learn – Model training
+
+MLflow – Experiment tracking & model registry
+
+Evidently – Drift monitoring
+
+FastAPI – Model serving
+
+Streamlit – Interactive dashboard
+
+Pandas / NumPy – Data processing
 
 📂 Project Structure
 ufo-mlops/
-│── data/                 # UFO dataset (ignored in git)
-│── reports/              # Drift reports (ignored in git)
-│── src/                  # Source code
-│   ├── preprocess.py
-│   ├── train.py
-│   ├── predict.py
-│   ├── monitor.py
-│── app.py                # Streamlit dashboard
-│── api.py                # FastAPI service
-│── requirements.txt
-│── README.md
-│── .gitignore
+│── data/                # Raw & processed datasets
+│── reports/             # Drift reports (JSON + HTML)
+│── src/
+│   ├── preprocess.py    # Cleaning & preprocessing
+│   ├── train.py         # Model training + MLflow logging
+│   ├── predict.py       # Prediction logic
+│   ├── monitor.py       # Drift detection with Evidently
+│── app.py               # Streamlit dashboard
+│── requirements.txt     # Dependencies
 
-⚡ Quickstart
+▶️ Quickstart
 
-Clone repo:
+Clone repo & install dependencies:
 
-git clone https://github.com/YOUR_USERNAME/ufo-mlops.git
+git clone https://github.com/yourusername/ufo-mlops.git
 cd ufo-mlops
-
-
-Create virtual environment:
-
-python -m venv venv
-source venv/bin/activate   # Linux/macOS
-venv\Scripts\activate      # Windows
-
-
-Install dependencies:
-
 pip install -r requirements.txt
 
 
-Run FastAPI service:
+Train model:
 
-uvicorn api:app --reload
+python -m src.train
 
 
-Run Streamlit dashboard:
+Run drift monitoring:
+
+python -m src.monitor
+
+
+Launch dashboard:
 
 streamlit run app.py
 
-📊 Example
+🎯 Future Improvements
 
-Input:
+Add Not UFO class (to avoid silly predictions on irrelevant text).
 
-“Bright lights hovered over the city at night.”
+Deploy with Docker + cloud service (AWS/GCP/Azure/Replit).
 
-Prediction:
-🛸 Unexplained UFO
+Confidence calibration plots for deeper analysis.
 
-🔮 Next Steps
+🙌 Why This Project?
 
-Automate retraining with Prefect.
+This project demonstrates the full MLOps lifecycle:
 
-CI/CD with GitHub Actions.
+From data → model → deployment → monitoring → dashboard.
 
-Deploy Streamlit app to Streamlit Cloud or Replit.
+It’s designed to be accessible to both:
 
-💡 This project demonstrates real-world MLOps skills: data ingestion, preprocessing, model training, registry, deployment, monitoring, and visualization.
+Recruiters → clear end-to-end pipeline with visuals.
+
+Engineers → practical use of MLflow, FastAPI, and Evidently.
+
+⚡️ “Not everything is black and white — that’s why the dashboard has a grey background. There’s always a shade of grey when it comes to UFOs.”
